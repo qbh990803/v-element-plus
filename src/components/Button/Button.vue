@@ -39,4 +39,9 @@ defineExpose({
 })
 </script>
 
-<style scoped></style>
+<style>
+.vk-button {
+  --main-bg-color: yellow;
+  background-color: var(--main-bg-color);
+}
+</style>
