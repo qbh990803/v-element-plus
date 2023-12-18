@@ -72,9 +72,6 @@
     --vk-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .12);
     --vk-box-shadow-lighter: 0px 0px 6px rgba(0, 0, 0, .12);
     --vk-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, .08), 0px 12px 32px rgba(0, 0, 0, .12), 0px 8px 16px -8px rgba(0, 0, 0, .16);
-    --vk-disabled-bg-color: var(--vk-fill-color-light);
-    --vk-disabled-text-color: var(--vk-text-color-placeholder);
-    --vk-disabled-border-color: var(--vk-border-color-light);
     --vk-overlay-color: rgba(0, 0, 0, .8);
     --vk-overlay-color-light: rgba(0, 0, 0, .7);
     --vk-overlay-color-lighter: rgba(0, 0, 0, .5);
@@ -90,6 +87,53 @@
     --vk-border-radius-small: 2px;
     --vk-border-radius-round: 20px;
     --vk-border-radius-circle: 100%;
+
+    /** font */
+    --vk-color-white: #ffffff;
+    --vk-color-black: #000000;
+    --vk-color-primary-rgb: 64, 158, 255;
+    --vk-color-success-rgb: 103, 194, 58;
+    --vk-color-warning-rgb: 230, 162, 60;
+    --vk-color-danger-rgb: 245, 108, 108;
+    --vk-color-error-rgb: 245, 108, 108;
+    --vk-color-info-rgb: 144, 147, 153;
+    --vk-font-size-extra-large: 20px;
+    --vk-font-size-large: 18px;
+    --vk-font-size-medium: 16px;
+    --vk-font-size-base: 14px;
+    --vk-font-size-small: 13px;
+    --vk-font-size-extra-small: 12px;
+    --vk-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+    --vk-font-weight-primary: 500;
+    --vk-font-line-height-primary: 24px;
+    --vk-index-normal: 1;
+    --vk-index-top: 1000;
+    --vk-index-popper: 2000;
+    --vk-border-radius-base: 4px;
+    --vk-border-radius-small: 2px;
+    --vk-border-radius-round: 20px;
+    --vk-border-radius-circle: 100%;
+    --vk-transition-duration: .3s;
+    --vk-transition-duration-fast: .2s;
+    --vk-transition-function-ease-in-out-bezier: cubic-bezier(.645, .045, .355, 1);
+    --vk-transition-function-fast-bezier: cubic-bezier(.23, 1, .32, 1);
+    --vk-transition-all: all var(--vk-transition-duration) var(--vk-transition-function-ease-in-out-bezier);
+    --vk-transition-fade: opacity var(--vk-transition-duration) var(--vk-transition-function-fast-bezier);
+    --vk-transition-md-fade: transform var(--vk-transition-duration) var(--vk-transition-function-fast-bezier), opacity var(--vk-transition-duration) var(--vk-transition-function-fast-bezier);
+    --vk-transition-fade-linear: opacity var(--vk-transition-duration-fast) linear;
+    --vk-transition-border: border-color var(--vk-transition-duration-fast) var(--vk-transition-function-ease-in-out-bezier);
+    --vk-transition-box-shadow: box-shadow var(--vk-transition-duration-fast) var(--vk-transition-function-ease-in-out-bezier);
+    --vk-transition-color: color var(--vk-transition-duration-fast) var(--vk-transition-function-ease-in-out-bezier);
+    --vk-component-size-large: 40px;
+    --vk-component-size: 32px;
+    --vk-component-size-small: 24px;
+
+    /** disabled */
+    --vk-disabled-bg-color: var(--vk-fill-color-light);
+    --vk-disabled-text-color: var(--vk-text-color-placeholder);
+    --vk-disabled-border-color: var(--vk-border-color-light);
+
+
     --vk-svg-monochrome-grey: var(--vk-border-color);
 
 }
