@@ -6,9 +6,8 @@ import type { ButtonInstance } from "@/components/Button/types";
 const buttonRef = ref<ButtonInstance | null>(null);
 
 onMounted(() => {
-  if(buttonRef.value) {
+  if (buttonRef.value) {
     console.log("buttonRef.value", buttonRef.value.ref);
-
   }
 });
 </script>
@@ -25,12 +24,30 @@ onMounted(() => {
   </header>
 
   <main>
-    <Button type="primary" plain disabled ref="buttonRef">Test Button</Button>
+    <Button ref="buttonRef">test Button</Button>
+    <Button plain>plain Button</Button>
+    <Button round>round Button</Button>
+    <Button circle>vk</Button>
+    <Button disabled>disabled Button</Button>
+    <br />
+    <br />
+    <Button type="primary">primary</Button>
+    <Button type="success">success</Button>
+    <Button type="info">info</Button>
+    <Button type="warning">warning</Button>
+    <Button type="danger">danger</Button>
+    <br />
+    <br />
+    <Button type="primary" plain>primary plain</Button>
+    <Button type="success" plain>success plain</Button>
+    <Button type="info" plain>info plain</Button>
+    <Button type="warning" plain>warning plain</Button>
+    <Button type="danger" plain>danger plain</Button>
+    <br />
+    <br />
+    <Button size="large">large</Button>
+    <Button size="small">small</Button>
   </main>
-  <h1>xxxx</h1>
-  <h2>xxxx</h2>
-  <h3>xxxx</h3>
-  <a href="#">The link</a>
 </template>
 
 <style scoped>
@@ -61,4 +78,3 @@ header {
   }
 }
 </style>
-
