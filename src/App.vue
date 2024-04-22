@@ -2,6 +2,8 @@
 import { ref, onMounted } from "vue";
 import Button from "@/components/Button/Button.vue";
 import type { ButtonInstance } from "@/components/Button/types";
+import Collapse from "@/components/Collapse/Collapse.vue";
+import CollapseItem from "@/components/Collapse/CollapseItem.vue";
 
 const buttonRef = ref<ButtonInstance | null>(null);
 
@@ -47,6 +49,18 @@ onMounted(() => {
     <br />
     <Button size="large">large</Button>
     <Button size="small">small</Button>
+    <br />
+    <br />
+    <Collapse>
+      <CollapseItem title="Title 1" name="1">Content 1</CollapseItem>
+      <CollapseItem name="2">
+        <template #title>
+          <div>custom title</div>
+        </template>
+        custom Content 
+      </CollapseItem>
+      <CollapseItem name="3" title="Title 3" disabled>Content 3</CollapseItem>
+    </Collapse>
   </main>
 </template>
 
