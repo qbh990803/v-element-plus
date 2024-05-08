@@ -25,20 +25,20 @@
 <script setup lang="ts">
 import { inject, computed } from "vue";
 import type { CollapseItemProps, NameType } from "./types";
-import { CollapseItemContextKey } from "./types";
+import { CollapseContextKey } from "./types";
 
 const props = defineProps<CollapseItemProps>();
 
-const collapseItemContext = inject(CollapseItemContextKey);
+const collapseContext = inject(CollapseContextKey);
 
 const isActive = computed(() => {
-  return collapseItemContext?.activeNames.value.includes(props.name);
+  return collapseContext?.activeNames.value.includes(props.name);
 });
 
 function handleClick(name: NameType) {
   console.log("name", name);
   if (props.disabled) return;
-  collapseItemContext?.handleCollapseItemClick(name);
+  collapseContext?.handleItemClick(name);
 }
 </script>
 

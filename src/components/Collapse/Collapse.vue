@@ -5,34 +5,51 @@
 </template>
 
 <script setup lang="ts">
-import { ref, provide } from "vue";
-import type { NameType } from "./types";
-import { CollapseItemContextKey } from "./types";
+import { ref, provide, watch } from "vue";
+import type { NameType, CollapseProps, CollapseEmits } from "./types";
+import { CollapseContextKey } from "./types";
 
 defineOptions({
   name: "VKCollapse",
 });
 
-defineProps({
-  modelValue: [String, Array],
-  accordion: Boolean,
-});
+const props = defineProps<CollapseProps>();
 
-const activeNames = ref<NameType[]>([]);
+const emits = defineEmits<CollapseEmits>();
 
-function handleCollapseItemClick(name: NameType) {
-  const index = activeNames.value.findIndex((item) => item === name);
+const activeNames = ref<NameType[]>(props.modelValue);
 
-  if (index > -1) {
-    activeNames.value.splice(index, 1);
-  } else {
-    activeNames.value.push(name);
-  }
+if (props.accordion && props.modelValue.length > 1) {
+  console.warn("accordion mode should only have one active item");
 }
 
-provide(CollapseItemContextKey, {
+watch(
+  () => props.modelValue,
+  (newVal) => {
+    activeNames.value = newVal;
+  }
+);
+
+function handleItemClick(name: NameType) {
+  if (props.accordion) {
+    activeNames.value = [activeNames.value[0] === name ? "" : name];
+  } else {
+    const index = activeNames.value.findIndex((item) => item === name);
+
+    if (index > -1) {
+      activeNames.value.splice(index, 1);
+    } else {
+      activeNames.value.push(name);
+    }
+  }
+
+  emits("update:modelValue", activeNames.value);
+  emits("change", activeNames.value);
+}
+
+provide(CollapseContextKey, {
   activeNames,
-  handleCollapseItemClick,
+  handleItemClick,
 });
 </script>
 

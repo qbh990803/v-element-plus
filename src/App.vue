@@ -7,10 +7,15 @@ import CollapseItem from "@/components/Collapse/CollapseItem.vue";
 
 const buttonRef = ref<ButtonInstance | null>(null);
 
+const activeNames = ref(["1"]);
 onMounted(() => {
   if (buttonRef.value) {
     console.log("buttonRef.value", buttonRef.value.ref);
   }
+
+  setTimeout(() => {
+    activeNames.value = ["2"];
+  }, 2000);
 });
 </script>
 
@@ -51,13 +56,14 @@ onMounted(() => {
     <Button size="small">small</Button>
     <br />
     <br />
-    <Collapse>
+    <div>{{ activeNames }}</div>
+    <Collapse v-model="activeNames" accordion>
       <CollapseItem title="Title 1" name="1">Content 1</CollapseItem>
       <CollapseItem name="2">
         <template #title>
           <div>custom title</div>
         </template>
-        custom Content 
+        custom Content
       </CollapseItem>
       <CollapseItem name="3" title="Title 3" disabled>Content 3</CollapseItem>
     </Collapse>
