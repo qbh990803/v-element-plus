@@ -4,6 +4,7 @@ import Button from "@/components/Button/Button.vue";
 import type { ButtonInstance } from "@/components/Button/types";
 import Collapse from "@/components/Collapse/Collapse.vue";
 import CollapseItem from "@/components/Collapse/CollapseItem.vue";
+import Icon from "@/components/Icon/Icon.vue";
 
 const buttonRef = ref<ButtonInstance | null>(null);
 
@@ -29,7 +30,7 @@ onMounted(() => {
       height="125"
     />
   </header>
-  <font-awesome-icon :icon="['fas', 'user-secret']" />
+  <Icon icon="arrow-right" spin />
   <main>
     <Button ref="buttonRef">test Button</Button>
     <Button plain>plain Button</Button>
