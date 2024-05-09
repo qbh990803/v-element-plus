@@ -58,7 +58,10 @@ onMounted(() => {
     <br />
     <div>{{ activeNames }}</div>
     <Collapse v-model="activeNames" accordion>
-      <CollapseItem title="Title 1" name="1">Content 1</CollapseItem>
+      <CollapseItem title="Title 1" name="1">
+        <div>Header title</div>
+        <div>Content 1</div>
+      </CollapseItem>
       <CollapseItem name="2">
         <template #title>
           <div>custom title</div>
