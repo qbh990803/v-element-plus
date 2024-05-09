@@ -29,7 +29,7 @@ onMounted(() => {
       height="125"
     />
   </header>
-
+  <font-awesome-icon :icon="['fas', 'user-secret']" />
   <main>
     <Button ref="buttonRef">test Button</Button>
     <Button plain>plain Button</Button>
