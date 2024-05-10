@@ -57,6 +57,10 @@ onMounted(() => {
     <Button size="small">small</Button>
     <br />
     <br />
+    <Button size="large" loading>Loading</Button>
+    <Button size="large" icon="arrow-up">arrow</Button>
+    <br />
+    <br />
     <div>{{ activeNames }}</div>
     <Collapse v-model="activeNames" accordion>
       <CollapseItem title="Title 1" name="1">

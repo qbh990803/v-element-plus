@@ -3,6 +3,7 @@
     class="vk-icon"
     :class="{ [`vk-icon--${type}`]: type }"
     :style="customColor"
+    v-bind="$attrs"
   >
     <FontAwesomeIcon v-bind="filteredProps" />
   </i>

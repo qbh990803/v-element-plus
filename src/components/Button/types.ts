@@ -1,10 +1,9 @@
-export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
-export type ButtonSize = 'large' | 'small';
-export type NativeType = 'button' | 'submit' | 'reset';
-
+export type ButtonType = "primary" | "success" | "warning" | "danger" | "info";
+export type ButtonSize = "large" | "small";
+export type NativeType = "button" | "submit" | "reset";
 
 export interface ButtonInstance {
-  ref: HTMLButtonElement
+  ref: HTMLButtonElement;
 }
 
 export interface ButtonProps {
@@ -16,4 +15,6 @@ export interface ButtonProps {
   disabled?: boolean;
   nativeType?: NativeType;
   autofocus?: boolean;
+  icon?: string;
+  loading?: boolean;
 }

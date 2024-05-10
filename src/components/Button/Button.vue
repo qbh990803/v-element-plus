@@ -9,11 +9,14 @@
       'is-round': round,
       'is-circle': circle,
       'is-disabled': disabled,
+      'is-loading': loading,
     }"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     :autofocus="autofocus"
     :type="nativeType"
   >
+    <Icon v-if="loading" icon="spinner" spin />
+    <Icon v-if="icon" :icon="icon" />
     <span>
       <slot></slot>
     </span>
@@ -22,21 +25,22 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import Icon from "../Icon/Icon.vue";
 import type { ButtonProps } from "./types";
 
 defineOptions({
-  name: 'VKButton'
+  name: "VKButton",
 });
 
 withDefaults(defineProps<ButtonProps>(), {
-  nativeType: 'button',
+  nativeType: "button",
 });
 
-const _ref = ref<HTMLButtonElement>()
+const _ref = ref<HTMLButtonElement>();
 
 defineExpose({
-  ref: _ref
-})
+  ref: _ref,
+});
 </script>
 
 <style>
