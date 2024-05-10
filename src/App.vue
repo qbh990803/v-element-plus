@@ -30,7 +30,7 @@ onMounted(() => {
       height="125"
     />
   </header>
-  <Icon icon="arrow-right" spin />
+  <Icon icon="arrow-right"  type="info" color="red" />
   <main>
     <Button ref="buttonRef">test Button</Button>
     <Button plain>plain Button</Button>

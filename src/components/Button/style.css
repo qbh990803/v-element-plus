@@ -83,7 +83,7 @@
   }
 }
 
-@each $val in primary, success, warning, danger {
+@each $val in primary, success, info, warning, danger {
   .vk-button--$(val) {
     --vk-button-text-color: var(--vk-color-white);
     --vk-button-bg-color: var(--vk-color-$(val));
