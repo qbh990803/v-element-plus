@@ -19,6 +19,10 @@ onMounted(() => {
     activeNames.value = ["2"];
   }, 2000);
 });
+
+function hello() {
+  alert('hello world')
+}
 </script>
 
 <template>
@@ -78,18 +82,28 @@ onMounted(() => {
     </Collapse>
     <br />
     <br />
-    <Alert type="success" show-icon>
+    <Alert type="success" show-icon closable close-text="Gotcha" @close="hello">
       <template #title>Custom Alert2</template>
+      <span>Success Content</span>
     </Alert>
-    <Alert title="Center Alert3" type="info" show-icon center />
-    <Alert title="Alert4" type="warning" show-icon />
-    <Alert title="Alert5" type="error" show-icon />
+    <Alert
+      title="Center Alert3"
+      type="info"
+      description="Info Content"
+      show-icon
+      center
+      closable
+    />
+    <Alert title="Alert4" type="warning" show-icon closable >
+      <span>Warning Content</span>
+    </Alert>
+    <Alert title="Alert5" type="error" show-icon closable />
     <br />
     <br />
-    <Alert title="Alert2" type="success" effect="dark" />
-    <Alert title="Alert3" type="info" effect="dark" />
-    <Alert title="Alert4" type="warning" effect="dark" />
-    <Alert title="Alert5" type="error" effect="dark" />
+    <Alert title="Alert2" type="success" effect="dark" closable />
+    <Alert title="Alert3" type="info" effect="dark" closable /> 
+    <Alert title="Alert4" type="warning" effect="dark" closable />
+    <Alert title="Alert5" type="error" effect="dark" closable />
   </main>
 </template>
 

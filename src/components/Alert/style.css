@@ -30,6 +30,11 @@
     font-size: var(--vk-alert-icon-size);
   }
 
+  .vk-alert__icon.is-big {
+    margin-right: 12px;
+    font-size: var(--vk-alert-icon-large-size);
+  }
+
   .vk-alert__content {
     display: flex;
     flex-direction: column;
@@ -40,20 +45,63 @@
     font-size: var(--vk-alert-title-font-size);
     line-height: 24px;
   }
+
+  .vk-alert__title.with-description {
+    font-size: var(--vk-alert-title-with-description-font-size);
+  }
+
+  .vk-alert__description {
+    font-size: var(--vk-alert-description-font-size);
+    margin: 0;
+  }
+
+  .vk-alert__close-btn {
+    font-size: var(--vk-alert-close-font-size);
+    opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    cursor: pointer;
+  }
+
+  .vk-alert__close-btn.is-customed {
+    font-style: normal;
+    font-size: var(--vk-alert-close-customed-font-size);
+    line-height: 24px;
+    top: 8px;
+}
 }
 
 .vk-alert.is-center {
   justify-content: center;
 }
 
+.vk-alert.is-light .vk-alert__close-btn {
+  color: var(--vk-text-color-placeholder);
+}
+
+.vk-alert.is-dark .vk-alert__close-btn,
+.vk-alert.is-dark .vk-alert__description {
+  color: var(--vk-color-white);
+}
+
 @each $val in success, info, warning, error {
   .vk-alert--$(val).is-light {
     --vk-alert-color: var(--vk-color-$(val));
     --vk-alert-bg-color: var(--vk-color-$(val)-light-9);
+
+    .vk-alert__description {
+      color: var(--vk-color-$(val));
+    }
   }
 
   .vk-alert--$(val).is-dark {
     --vk-alert-color: var(--vk-color-white);
     --vk-alert-bg-color: var(--vk-color-$(val));
   }
+}
+
+
+.fade-enter-from, .fade-leave-active {
+  opacity: 0;
 }

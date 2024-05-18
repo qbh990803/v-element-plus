@@ -8,6 +8,10 @@ export interface AlertProps {
   description?: string;
   closable?: boolean;
   center?: boolean;
-  closeText?: boolean;
+  closeText?: string;
   showIcon?: boolean;
+}
+
+export interface AlertEmits {
+  (e: "close", values: MouseEvent): void;
 }

@@ -127,8 +127,4 @@
   --vk-disabled-border-color: var(--vk-border-color-light);
 
   --vk-svg-monochrome-grey: var(--vk-border-color);
-
-  /* animation */
-  --vk-transition-duration: 0.3s;
-  --vk-transition-duration-fast: 0.3s;
 }
