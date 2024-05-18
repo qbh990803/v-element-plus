@@ -5,6 +5,7 @@ import type { ButtonInstance } from "@/components/Button/types";
 import Collapse from "@/components/Collapse/Collapse.vue";
 import CollapseItem from "@/components/Collapse/CollapseItem.vue";
 import Icon from "@/components/Icon/Icon.vue";
+import Alert from "@/components/Alert/Alert.vue";
 
 const buttonRef = ref<ButtonInstance | null>(null);
 
@@ -30,7 +31,7 @@ onMounted(() => {
       height="125"
     />
   </header>
-  <Icon icon="arrow-right"  type="info" color="red" />
+  <Icon icon="arrow-right" type="info" color="red" />
   <main>
     <Button ref="buttonRef">test Button</Button>
     <Button plain>plain Button</Button>
@@ -75,6 +76,20 @@ onMounted(() => {
       </CollapseItem>
       <CollapseItem name="3" title="Title 3" disabled>Content 3</CollapseItem>
     </Collapse>
+    <br />
+    <br />
+    <Alert type="success" show-icon>
+      <template #title>Custom Alert2</template>
+    </Alert>
+    <Alert title="Center Alert3" type="info" show-icon center />
+    <Alert title="Alert4" type="warning" show-icon />
+    <Alert title="Alert5" type="error" show-icon />
+    <br />
+    <br />
+    <Alert title="Alert2" type="success" effect="dark" />
+    <Alert title="Alert3" type="info" effect="dark" />
+    <Alert title="Alert4" type="warning" effect="dark" />
+    <Alert title="Alert5" type="error" effect="dark" />
   </main>
 </template>
 
